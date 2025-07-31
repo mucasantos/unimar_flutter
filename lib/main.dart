@@ -3,6 +3,9 @@
 // This package provides the Material Design widgets and themes.
 import 'package:flutter/material.dart';
 import 'package:unimar_sab_19/views/homepage/homepage.dart';
+import 'package:unimar_sab_19/views/login/login_page.dart';
+import 'package:unimar_sab_19/views/cadastro/cadastro_page.dart';
+import 'package:unimar_sab_19/views/cadastro/cadastro_pet_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +23,13 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 91, 8, 234),
         ),
       ),
-      home: Homepage(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/cadastro': (context) => const CadastroPage(),
+        '/cadastro_pet': (context) => const CadastroPetPage(),
+        '/home': (context) => Homepage(),
+      },
     );
   }
 }
